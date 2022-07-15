@@ -1,48 +1,29 @@
-//variable is html element button that comes up on extension popup
-// let sortButton = document.getElementById("sortButton");
 
-// sortButton.addEventListener("click", () => {
-//     //after clicking the button, invoke sort tabs
-
-// } )
-
+let tabData;
 
 //use chrome instead of browser that MDN uses, this gets all info on tabs
 let querying = chrome.tabs.query({currentWindow: true})
     .then((value) => {
+        //value is array of tabs and their details
         console.log(value)
-        
+        //run the function sortTabs
+
     })
-//this console.logs the Promise that holds an array of info for all tabs in current window 
 
+// function sortTabs(value){
+//         //get array of open tabs with title and index loop through array 
+//         //check if title[i] is > title[i+1] if so, then move tab for i right
+//     for(let i = 1; i<value.length;i++){
+//         let titleLeft = value[i].title;
+//         for(let j = 0; j<value.length; i++){
+//             let titleRight = value[j].title;
+//             if(titleLeft > titleRight){
+//                 //move left to right - moving returns a promise
+//                 let moving = chrome.tabs.move(value.tabs[i].id, {index:i+1})
+//                 console.log(moving)
 
+//             }
+//         }
+//     }
 
-// function sortTabs(){
-//     //get array of open tabs with title and index
-//     //iterate through array and compare title with title next to it, use something like bubble sort to move tabs to sort alphabetically
-
-//     //use tabs.move() to move the tabs
-//     //tabs.Tab contains information about tab
-
-// }
-
-
-/* ---------------- CODE FROM TUTORIAL TO CHANGE BACKGROUND COLOR ------------------*/
-// chrome.storage.sync.get("color", ({ color }) => {
-//   changeColor.style.backgroundColor = color;
-// });
-
-// changeColor.addEventListener("click", async () => {
-//     let [tab] = await chrome.tabs.query({ active: true, currentWindow: true});
-
-//     chrome.scripting.executeScript({
-//         target: { tabId: tab.id },
-//         function: setPageBackgroundColor,
-//     });
-// });
-
-// function setPageBackgroundColor() {
-//     chrome.storage.sync.get("color", ({color}) => {
-//         document.body.style.backgroundColor = color;
-//     })
-// }
+// // }
