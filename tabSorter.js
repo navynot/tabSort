@@ -1,4 +1,4 @@
-let changeColor = document.getElementById("changeColor");
+let changeColor = document.getElementById("sortButton");
 
 chrome.storage.sync.get("color", ({ color }) => {
   changeColor.style.backgroundColor = color;
