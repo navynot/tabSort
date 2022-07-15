@@ -6,9 +6,16 @@
 
 // } )
 
-//use chrome instead of browser
-let querying = chrome.tabs.query({})
-console.log(querying)
+
+//use chrome instead of browser that MDN uses, this gets all info on tabs
+let querying = chrome.tabs.query({currentWindow: true})
+    .then((value) => {
+        console.log(value)
+        
+    })
+//this console.logs the Promise that holds an array of info for all tabs in current window 
+
+
 
 // function sortTabs(){
 //     //get array of open tabs with title and index
