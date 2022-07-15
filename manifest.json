@@ -6,9 +6,9 @@
     "background": {
       "service_worker": "background.js"
     },
-    "permissions": ["storage", "scripting", "<all_urls>", "tabs"],
+    "permissions": ["storage", "scripting", "tabs"], 
     "action": {
-        "default_popup": "popup.html",
+        "default_popup": "tabSorter.html",
         "default_icon": {
             "16": "/images/tabsFavicon.png",
             "32": "/images/tabsFavicon.png",
@@ -23,3 +23,5 @@
         "128": "/images/tabsFavicon.png"
       }
   }
+
+ 
