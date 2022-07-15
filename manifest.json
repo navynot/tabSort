@@ -8,7 +8,7 @@
     },
     "permissions": ["storage", "scripting", "tabs"], 
     "action": {
-        "default_popup": "tabSorter.html",
+        "default_popup": "popup.html",
         "default_icon": {
             "16": "/images/tabsFavicon.png",
             "32": "/images/tabsFavicon.png",
