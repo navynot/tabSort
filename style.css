@@ -1,19 +1,25 @@
 button {
-    height: 50px;
-    width: 100px;
-    outline: none;
-    margin: 10px;
-    border: none;
-    border-radius: 2px;
-    color: black;
-    background: red;
-  }
-  
-  button.current {
-    box-shadow: 0 0 0 2px white,
-                0 0 0 4px black;
+  padding: 5px 15px;
+  font-size: 15px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: whitesmoke;
+  background-color: #333438;
+  border: none;
   }
 
+button:active {
+  background-color: #fffdfd;
+}
+
+button:hover {
+  background-color: #646363;
+}
+
 body {
-  width: 150px;
+  height: 150px;
+  width: fit-content;
+  background-color: #333438;
+  outline: 2px;
 }
