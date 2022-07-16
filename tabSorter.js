@@ -1,36 +1,35 @@
 
-const tabData = {};
-let sortedTab = {}
-let sortedId = [];
+//initialize alphabet sort button 
+let alphaButton = document.getElementById("alphaButton");
 
-let sortButton = document.getElementById("sortButton");
+//when button is clicked, sort tabs alphabetically
+alphaButton.addEventListener("click", () => {
+    alphabetSort();
+});
 
-//use chrome instead of browser that MDN uses, this gets all info on tabs
-let allTabs = chrome.tabs.query({currentWindow: true})
+function alphabetSort() {
+    const tabData = {};
+    let sortedTab = {}
+    let sortedId = [];
+
+    //get information of all tabs
+    chrome.tabs.query({currentWindow: true})
     .then(tabs => {
-        sortButton.addEventListener("click", () => {
-            //add titles and ids to tabData object
+
+            //iterate through tabs object and add tab title and tab id as key, value pairs to tabData object
             for (let i = 0; i < tabs.length; i++) {
                 tabData[tabs[i].title] = tabs[i].id;
             };
 
-            //sort titles alphabetically while retaining their respective ids
+            //sort the tabData object by first creating an array of the keys (tab titles)
+            //reduce the array into a new object that contains the sorted titles with their corresponding tab IDs
             sortedTab = Object.keys(tabData).sort().reduce((acc, cur) => {
-                acc[cur] = tabData[cur];
-                return acc;
+            acc[cur] = tabData[cur];
+            return acc;
             }, {});
 
-            //create array of values in sorted order
-            sortedId = Object.values(sortedTab);
-
-            
-            moveTabs(sortedId);
-        })
+            //create an array of the sorted IDs
+            //iterate through the sorted IDs and move each tab to their corresponding indexes
+            sortedId = Object.values(sortedTab).forEach(id => {chrome.tabs.move(id, {index: sortedId.indexOf(id)})});
     });
-
-
-function moveTabs(ids){
-    ids.forEach(id => {
-        chrome.tabs.move(id, {index: ids.indexOf(id)})
-    })
-}
+};
