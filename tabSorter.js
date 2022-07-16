@@ -12,7 +12,6 @@ function alphabetSort() {
     let sortedTab = {}
     let sortedId = [];
 
-    console.log(chrome.tabs.query({currentWindow: true}));
     //get information of all tabs
     chrome.tabs.query({currentWindow: true})
     .then(tabs => {
@@ -21,17 +20,22 @@ function alphabetSort() {
             for (let i = 0; i < tabs.length; i++) {
                 tabData[tabs[i].title] = tabs[i].id;
             };
-
+            console.log(tabData)
             //sort the tabData object by first creating an array of the keys (tab titles)
             //reduce the array into a new object that contains the sorted titles with their corresponding tab IDs
             sortedTab = Object.keys(tabData).sort().reduce((acc, cur) => {
+            console.log(acc)
             acc[cur] = tabData[cur];
             return acc;
             }, {});
-
+            console.log(sortedTab)
             //create an array of the sorted IDs
             //iterate through the sorted IDs and move each tab to their corresponding indexes
-            sortedId = Object.values(sortedTab).forEach(id => {chrome.tabs.move(id, {index: sortedId.indexOf(id)})});
+            sortedId = Object.values(sortedTab).forEach(id => {
+                console.log(id)
+                console.log(sortedId.indexOf(id));
+                chrome.tabs.move(id, {index: sortedId.indexOf(id)
+                })});
     });
 };
 

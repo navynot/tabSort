@@ -5,9 +5,30 @@
   </head>
   <body>
     <p style="color: whitesmoke;">Sort Tabs</p>
-    <button id="alphaButton">Alphabetically</button>
-    <button id="reveseAlphaButton">Reverse Alphabetically</button>
-    <button id="reveseCurrentButton">Reverse Current</button>
+    <div class="space">
+      <button id="alphaButton">Alphabetically</button>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    
+    <div class="space">
+      <button id="reveseAlphaButton">Reverse Alphabetically</button>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    
+    <div class="space">
+      <button id="reveseCurrentButton">Reverse Current Order</button>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    
     <script src="tabSorter.js"></script>
   </body>
 </html>
