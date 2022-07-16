@@ -1,12 +1,13 @@
 button {
   padding: 5px 15px;
   font-size: 15px;
-  text-align: center;
+  text-align: left;
   cursor: pointer;
   outline: none;
   color: whitesmoke;
   background-color: #333438;
   border: none;
+  width:195px;
   }
   
 button:hover {
