@@ -8,13 +8,13 @@ button {
   background-color: #333438;
   border: none;
   }
-
-button:active {
-  background-color: #fffdfd;
-}
-
+  
 button:hover {
   background-color: #646363;
+}
+
+button:active {
+  background-color: #747474;
 }
 
 body {
