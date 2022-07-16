@@ -3,10 +3,7 @@
     "description": "Sort your tabs alphabetically with just the click of a button",
     "version": "1.0",
     "manifest_version": 3,
-    "background": {
-      "service_worker": "background.js"
-    },
-    "permissions": ["storage", "scripting", "tabs"], 
+    "permissions": ["tabs"], 
     "action": {
         "default_popup": "popup.html",
         "default_icon": {
