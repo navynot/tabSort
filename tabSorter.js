@@ -1,14 +1,17 @@
 
-let tabData;
+// let tabData;
 
 //use chrome instead of browser that MDN uses, this gets all info on tabs
-let querying = chrome.tabs.query({currentWindow: true})
+let tabData = chrome.tabs.query({currentWindow: true})
     .then((value) => {
         //value is array of tabs and their details
-        console.log(value)
+        // console.log(value)
         //run the function sortTabs
+        return value
 
     })
+
+    console.log(tabData)
 
 // function sortTabs(value){
 //         //get array of open tabs with title and index loop through array 
