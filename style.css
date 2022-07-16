@@ -18,10 +18,22 @@ button:active {
 }
 
 body {
-  height: 120px;
+  height: 150px;
   width: 250px;
   background-color: #333438;
   outline: 2px;
+}
+
+#auto {
+  display: flex;
+  justify-content: right;
+  padding-right: 13px;
+}
+
+.space {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10px;
 }
 
 /* The switch - the box around the slider */
