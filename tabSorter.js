@@ -1,3 +1,4 @@
+const auto = {};
 
 //initialize alphabet sort button 
 let alphaButton = document.getElementById("alphaButton");
@@ -102,3 +103,16 @@ function reverseCurrent() {
             sortedId = Object.values(sortedTab).forEach(id => {chrome.tabs.move(id, {index: sortedId.indexOf(id)})});
     });
 };
+
+const alphaAuto = document.getElementById("alpha");
+
+chrome.storage.sync.get('auto', (data) => {
+    Object.assign(auto, data.auto);
+    alphaAuto.checked = Boolean(auto.alpha)
+})
+
+alphaAuto.addEventListener("change", (event) => {
+    auto.alpha = event.target.checked;
+    chrome.storage.sync.set({auto});
+    console.log("your mom");
+})
